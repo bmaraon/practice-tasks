@@ -1,11 +1,11 @@
 
-# Project - Task Management
+# Task Management
 
-A small application created to practice Laravel + Livewire + Alpine.js stack in managing projectsa and tasks. An application same as Kanban Boards.
+A small application created using Laravel 10, Livewire 2, Alpine.js, and Tailwind stack in managing projects and tasks. An application same as kanban boards yet more on sorting the list that transfering categories.
 
 ## Project
 
-Clone repository from this link: `https://github.com/bmaraon/practice-tasks`.
+Clone repository from this link: `https://github.com/bmaraon/task-management`.
 
 
 ## Configurations
@@ -13,9 +13,9 @@ Clone repository from this link: `https://github.com/bmaraon/practice-tasks`.
 To run this project, please refer to this environment variables.
 #### .env
 ```
-APP_NAME="Project Management"
+APP_NAME="Task Management"
 APP_ENV=local
-APP_KEY=base64:KPhejIBwO6+C4MJf+4U41zFA/vtqXdyseCSGYfpT1aU=
+APP_KEY=
 APP_DEBUG=true
 APP_URL=http://localhost:9002
 
@@ -26,7 +26,7 @@ LOG_LEVEL=debug
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=project_task
+DB_DATABASE=task_management
 DB_USERNAME=root
 DB_PASSWORD=
 
@@ -71,7 +71,6 @@ VITE_PUSHER_HOST="${PUSHER_HOST}"
 VITE_PUSHER_PORT="${PUSHER_PORT}"
 VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
 VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
-
 ```
 #### vite.config.js
 ```
@@ -111,7 +110,7 @@ module.exports = {
 - Access SQL server then create database
 ```
 mysql -uroot -p
-create database project_task charset=utf8mb4;
+create database task_management charset=utf8mb4;
 ```
 - Go to project root directory
 - Install dependencies
@@ -121,6 +120,10 @@ composer install
 
 npm install
 ...
+```
+- Generate app key
+```
+php artisan key:generate
 ```
 - Migration and seeder (remove seeder if not necessary)
 ```
@@ -133,7 +136,7 @@ php artisan migrate --seed
 
 Backend
 ```bash
-php atisan serve --port=9002
+php artisan serve --port=9002
 ```
 
 Frontend
